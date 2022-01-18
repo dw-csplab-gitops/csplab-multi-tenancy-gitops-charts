@@ -24,5 +24,5 @@ cd "${ROOT_DIR}"
 
 cp ${TMP_DIR}/* ${ROOT_DIR}/docs/
 
-helm repo index "${ROOT_DIR}/docs/" --url "https://github.com/dw-csplab-gitops/csplab-multi-tenancy-gitops-charts/stable" --merge "${CHART_DIR}/docs/index.yaml"
+helm repo index "${ROOT_DIR}/docs/" --url "https://dw-csplab-gitops.github.io/csplab-multi-tenancy-gitops-charts/" --merge "${CHART_DIR}/docs/index.yaml"
 #cp "${CHART_DIR}/index.yaml" "${ROOT_DIR}"
