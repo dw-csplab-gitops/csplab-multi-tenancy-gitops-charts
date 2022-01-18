@@ -1,0 +1,20 @@
+apiVersion: scheduler.spectrumcomputing.ibm.com/v1
+kind: Scheduling
+metadata:
+  labels:
+    release: cpd-scheduler
+    velero.io/exclude-from-backup: "true"
+  name: ibm-cpd-scheduler
+  namespace: ibm-common-services     # Specify the namespace where IBM Cloud Pak foundational services is installed.
+spec:
+  version: {{ .Chart.AppVersion }}
+  cluster:
+    pvc:
+      dynamicStorage: true
+      size: {{ .Values.volumeSize }}
+  license:
+    accept: true
+  registry: cp.icr.io/cp/cpd
+  releasename: ibm-cpd-scheduler
+  storageClass: {{ .Values.storageClass }}     # See the guidance in "Information you need to complete this task"
+

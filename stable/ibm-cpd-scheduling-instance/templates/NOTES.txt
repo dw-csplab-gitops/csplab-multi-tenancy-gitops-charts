@@ -1,0 +1,3 @@
+Deployed Cloud Pak for Data Scheduling version {{ .Chart.AppVersion }}
+using storage class: {{ .Values.storageClass }} and volume size: {{ .Values.volumeSize }}.
+
