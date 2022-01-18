@@ -22,7 +22,7 @@ cd "${ROOT_DIR}"
 #git checkout --track origin/gh-pages
 
 
-cp ${TMP_DIR}/* ${ROOT_DIR}/docs/stable
+cp ${TMP_DIR}/* ${ROOT_DIR}/docs/
 
-helm repo index "${ROOT_DIR}/docs/stable" --url "https://github.com/dw-csplab-gitops/csplab-multi-tenancy-gitops-charts/stable/" --merge "${CHART_DIR}/docs/index.yaml"
+helm repo index "${ROOT_DIR}/docs/" --url "https://github.com/dw-csplab-gitops/csplab-multi-tenancy-gitops-charts/stable" --merge "${CHART_DIR}/docs/index.yaml"
 #cp "${CHART_DIR}/index.yaml" "${ROOT_DIR}"
