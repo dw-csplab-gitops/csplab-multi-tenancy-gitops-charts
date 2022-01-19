@@ -2,5 +2,16 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-storageClass: "managed-nfs-storage"
-volumeSize: "10G"
+ibmcpdschedulerinstance:
+  name: ibm-cpd-scheduler
+  spec:
+    version: 1.3.1
+    cluster:
+      pvc:
+        dynamicStorage: true
+        size: 10G
+    license:
+      accept: true
+    registry: cp.icr.io/cp/cpd
+    releasename: ibm-cpd-scheduler
+    storageClass: "managed-nfs-storage"
