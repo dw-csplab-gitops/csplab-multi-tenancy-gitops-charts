@@ -1,6 +1,9 @@
 apiVersion: scheduler.spectrumcomputing.ibm.com/v1
 kind: Scheduling
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: {{ .Values.ibmcpdschedulerinstance.syncWave | quote }}
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   labels:
     release: cpd-scheduler
     velero.io/exclude-from-backup: "true"
