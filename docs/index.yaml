@@ -1,14 +1,25 @@
 apiVersion: v1
 entries:
+  ibm-cpd-platform-instance:
+  - apiVersion: v2
+    appVersion: 4.0.4
+    created: "2022-01-20T19:16:57.463806-06:00"
+    description: A Helm chart for Kubernetes
+    digest: 59b33fa8325ec7de0d0746eaedac93b2889cb821fa3f83d5db80c23937bdc47d
+    name: ibm-cpd-platform-instance
+    type: application
+    urls:
+    - https://dw-csplab-gitops.github.io/csplab-multi-tenancy-gitops-charts/ibm-cpd-platform-instance-0.1.1.tgz
+    version: 0.1.1
   ibm-cpd-scheduling-instance:
   - apiVersion: v2
     appVersion: 1.3.1
-    created: "2022-01-19T19:22:24.064359-06:00"
+    created: "2022-01-20T19:16:57.464249-06:00"
     description: A Helm chart for Kubernetes
-    digest: b11565edd74a0941209a1e0d62acfe50858d790e766ec89f86b6167dfdc15ada
+    digest: cd2730901ab61420252bcf91fc468e7c6ac40eabbf40a0d6a4f495c827090114
     name: ibm-cpd-scheduling-instance
     type: application
     urls:
     - https://dw-csplab-gitops.github.io/csplab-multi-tenancy-gitops-charts/ibm-cpd-scheduling-instance-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-19T19:22:24.061906-06:00"
+generated: "2022-01-20T19:16:57.463346-06:00"
