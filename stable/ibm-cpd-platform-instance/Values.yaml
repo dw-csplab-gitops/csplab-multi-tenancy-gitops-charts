@@ -11,3 +11,32 @@ spec:
   storageClass: managed-nfs-storage
   zenCoreMetadbStorageClass: managed-nfs-storage
   version: "4.0.4"
+
+argocd-hook-job:
+  name: cpd-platform-presync
+  namespace: ibm-common-services
+  hook:
+    enabled: true
+    hooktype: PreSync
+  hookdeletepolicy:
+    enabled: true
+    hookdeletepolicytype: HookSucceeded
+  serviceaccount: cpd-instance-argocd-hook-job-sa
+  roleaccess:
+    - verbs:
+        - get
+        - list
+      apiGroups:
+        - "*"
+      resources:
+        - scheduling
+  init:
+    enabled: false
+  container:
+    image: "quay.io/ibmgaragecloud/helm-kubectl"
+    tag: "latest"
+    command: "bash"
+    args:
+      - "-c"
+      - "while !  [ `kubectl get scheduling -n ibm-common-services -o jsonpath='{.items[0].status.cpd-schedulingStatus}'` = \"Completed\" ] > /dev/null; do echo \"checking for Cloud Pak for Data Scheduler....\"; sleep 30; done; echo \"Scheduler is installed.\""
+
