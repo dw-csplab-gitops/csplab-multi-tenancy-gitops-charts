@@ -2,15 +2,16 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-metadata:
-  name: ibmcpd-cr
-spec:
-  license:
-    accept: true
-    license: Enterprise
-  storageClass: managed-nfs-storage
-  zenCoreMetadbStorageClass: managed-nfs-storage
-  version: "4.0.4"
+ibm-cp4d-watson-studio-instance:
+  metadata:
+    name: ibmcpd-cr
+  spec:
+    license:
+      accept: true
+      license: Enterprise
+    storageClass: managed-nfs-storage
+    zenCoreMetadbStorageClass: managed-nfs-storage
+    version: "4.0.4"
 
 argocd-hook-job:
   name: cpd-platform-presync
